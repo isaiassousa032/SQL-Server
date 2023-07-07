@@ -38,7 +38,7 @@ AS
     SET @CategoryId = (SELECT TOP 1 [Id] FROM [Categoria] WHERE [Nome] = @Category)
     SELECT * FROM [Curso] WHERE [CategoriaId] = @CategoryId
 
-EXEC [spListCourse] 'Backend'
+EXEC [spListCourse] 'Data'
 
 DROP PROCEDURE [spListCourse]
 
