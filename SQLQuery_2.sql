@@ -26,3 +26,17 @@ CREATE TABLE [Author]
     CONSTRAINT [PK_Author] PRIMARY KEY ([Id])
 );
 GO
+
+CREATE TABLE [Career]
+(
+    [Id] UNIQUEIDENTIFIER NOT NULL,
+    [Title] NVARCHAR(160) NOT NULL,
+    [Summary] NVARCHAR(2000) NOT NULL,
+    [Url] NVARCHAR(1024) NOT NULL,
+    [DurationInMinutes] INT NOT NULL,
+    [Active] BIT NOT NULL,
+    [Featured] BIT NOT NULL,
+    [Tags] NVARCHAR(160) NOT NULL,
+    CONSTRAINT [PK_Career] PRIMARY KEY ([Id])
+);
+GO
