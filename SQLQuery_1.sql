@@ -30,4 +30,17 @@ WHERE
     [Id] BETWEEN '2020-03-01 00:00:00' AND '2020-03-31 23:59:00'
 
 
+CREATE OR ALTER PROCEDURE [spListCourse] 
+    @Category NVARCHAR(60)
+AS
+
+    DECLARE @CategoryId INT
+    SET @CategoryId = (SELECT TOP 1 [Id] FROM [Categoria] WHERE [Nome] = @Category)
+    SELECT * FROM [Curso] WHERE [CategoriaId] = @CategoryId
+
+EXEC [spListCourse] 'Backend'
+
+DROP PROCEDURE [spListCourse]
+
+
 
