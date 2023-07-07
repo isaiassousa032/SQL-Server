@@ -22,7 +22,12 @@ ALTER TABLE [Aluno]
 ALTER TABLE [Aluno]
     ALTER COLUMN [Document] CHAR(11)
 
-
+SELECT TOP 100
+    *
+FROM 
+    [Curso]
+WHERE
+    [Id] BETWEEN '2020-03-01 00:00:00' AND '2020-03-31 23:59:00'
 
 
 
