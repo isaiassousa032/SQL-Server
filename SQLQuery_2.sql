@@ -8,7 +8,21 @@ CREATE TABLE [Student]
     [Document] NVARCHAR(20) NULL,
     [Phone] NVARCHAR(20) NULL,
     [Birthdate] DATETIME NULL,
-    [CreateDate] DATETIME NOT NULL,
+    [CreateDate] DATETIME NOT NULL DEFAULT(GETDATE()),
     CONSTRAINT [PK_Student] PRIMARY KEY ([Id])
+);
+GO
+
+CREATE TABLE [Author]
+(
+    [Id] UNIQUEIDENTIFIER NOT NULL,
+    [Name] NVARCHAR(80) NOT NULL,
+    [Title] NVARCHAR(80) NOT NULL,
+    [Image] NVARCHAR(1024) NOT NULL,
+    [Bio] NVARCHAR(2000) NOT NULL,
+    [Url] NVARCHAR(450) NULL,
+    [Email] NVARCHAR(160) NOT NULL,
+    [Type] TINYINT NOT NULL,
+    CONSTRAINT [PK_Author] PRIMARY KEY ([Id])
 );
 GO
